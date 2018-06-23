@@ -1,0 +1,28 @@
+<div class="text-center">
+  <div class="media-left">
+      
+      <div class="media-left">
+        
+        <%= image_tag(@post.image) %>
+        <%= render "likes/like_button", post: @post %>
+        <%= render "posts/del_button", post: @post %>
+      </div>
+      
+      <div class="media-body">
+        <div>
+          <p>投稿者：<%= link_to @post.user.name, user_path(@post.user) %></p>
+        </div>
+        <div>
+          <p>撮影場所：<%= @post.location %></p>
+        </div>
+        <div>
+          <p><%= link_to "GoogleMapで開く", "https://www.google.com/maps?q="+@post.location, :target=>["_blank"] %></p>
+        </div>
+        <div>
+           <span class="text-muted">撮影日時：<%= @post.date %></span>
+        </div>
+        <div>
+           <span class="text-muted">投稿日時：<%= @post.created_at %></span>
+        </div>
+    </div>
+</div>
