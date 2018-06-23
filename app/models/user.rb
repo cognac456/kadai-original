@@ -8,7 +8,7 @@ class User < ApplicationRecord
   has_secure_password
   
   has_many :posts #,dependent: :destroy
-  has_many :likes #,dependent: :destroy
+  has_many :likes ,dependent: :destroy
   has_many :fav_posts, through: :likes, source: :post #,dependent: :destroy
   
   def favo(post)

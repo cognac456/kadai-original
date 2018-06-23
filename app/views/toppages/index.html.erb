@@ -6,8 +6,10 @@
 <div class="center jumbotron">
   <div class="text-center">
     <h1>Welcome to the Photo-Posts</h1>
-    <%= image_tag(@post.image, {size: 250}) %>
-    <%#= @post.location %>
+    <% if @post %>
+      <%= image_tag(@post.image, {size: 250}) %>
+      <%#= @post.location %>
+    <% end %>
     <%= link_to "SignUp", signup_path, class: "btn btn-lg btn-primary" %>
   </div>
 </div>
