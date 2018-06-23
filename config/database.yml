@@ -51,7 +51,6 @@ production:
   adapter: postgresql
   encoding: unicode
   pool: 5
-  <<: *default
   database: photopost_production
   username: photopost
   password: <%= ENV['PHOTOPOST_DATABASE_PASSWORD'] %>
